@@ -10,6 +10,6 @@ class Points
   end
 # calculates the number of points for one answer
   def calculate(answer)
-    @correct_answer.join(" ") == answer ? 2 : 0
+    @correct_answer["2"].map {|version| version.join(" ") == answer["2"] ? 2 : 0}.reduce(:+) 
   end
 end
